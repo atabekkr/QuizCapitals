@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/bg"
+    tools:context=".GameActivity">
+
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_standard"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_title"
+        android:letterSpacing="0.05"
+        tools:ignore="SpUsage" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp">
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/lpi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:progress="0"
+            android:max="10"
+            android:minHeight="100dp"
+            android:layout_marginStart="@dimen/margin_standard"/>
+
+        <TextView
+            android:id="@+id/tv_tablo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_schet"
+            android:layout_gravity="end"
+            android:layout_marginHorizontal="@dimen/margin_standard"
+            android:layout_marginBottom="8dp"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_option_one"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="@dimen/margin_64"
+        android:textColor="@color/white"
+        android:letterSpacing="0.15"
+        app:cornerRadius="16dp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_option_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:textColor="@color/white"
+        app:strokeWidth="2dp"
+        app:cornerRadius="16dp"
+        app:strokeColor="@color/white"
+        android:layout_marginHorizontal="32dp"
+        android:letterSpacing="0.15"
+        android:layout_marginTop="@dimen/margin_standard"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_option_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:textColor="@color/white"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/white"
+        app:cornerRadius="16dp"
+        android:layout_marginHorizontal="32dp"
+        android:letterSpacing="0.15"
+        android:layout_marginTop="@dimen/margin_standard"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_option_four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:textColor="@color/white"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/white"
+        app:cornerRadius="16dp"
+        android:layout_marginHorizontal="@dimen/margin_32"
+        android:letterSpacing="0.15"
+        android:layout_marginTop="@dimen/margin_standard"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_option_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_marginHorizontal="32dp"
+        android:letterSpacing="0.15"
+        android:paddingVertical="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_64"
+        android:backgroundTint="#3F51AE"
+        app:cornerRadius="16dp"/>
+
+
+</LinearLayout>
