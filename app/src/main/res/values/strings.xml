@@ -7,5 +7,9 @@
     <string name="text_submit">Submit</string>
     <string name="text_continue">Continue</string>
     <string name="text_schet">1/10</string>
-    <string name="text_result">Ваш результат</string>
+    <string name="text_result">Your result: %s</string>
+    <string name="text_finish">Finish</string>
+    <string name="text_congrats">Congratulation: %s</string>
+    <string name="text_exit">exit</string>
+    <string name="text_new_game">new game</string>
 </resources>

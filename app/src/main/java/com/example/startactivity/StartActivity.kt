@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.widget.addTextChangedListener
+import com.example.startactivity.databinding.ActivityResultBinding
 import com.example.startactivity.databinding.ActivityStartBinding
 
 class StartActivity : AppCompatActivity() {
@@ -14,7 +15,12 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        val intent1 = Intent(this, ResultActivity::class.java)
+
+
         val sharedPreferences = getSharedPreferences("CapitalsSettings", Context.MODE_PRIVATE)
+
+
 
         binding.etName.addTextChangedListener {
             binding.tilName.isErrorEnabled = false
@@ -22,7 +28,7 @@ class StartActivity : AppCompatActivity() {
 
         binding.btnStart.setOnClickListener {
             val name = binding.etName.text.toString()
-
+            intent1.putExtra("congrats", name)
             if (name.isEmpty() || name.isBlank()){
                 binding.tilName.error = getString(R.string.error_text)
             } else {

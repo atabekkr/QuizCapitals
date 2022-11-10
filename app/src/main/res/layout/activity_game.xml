@@ -106,7 +106,7 @@
         android:id="@+id/btn_option_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="@string/text_submit"
         android:layout_marginHorizontal="32dp"
         android:letterSpacing="0.15"
         android:paddingVertical="@dimen/margin_standard"

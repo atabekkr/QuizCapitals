@@ -15,7 +15,7 @@ import com.google.android.material.snackbar.Snackbar
 
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
-    private val questions = Constants.provideQuestions()
+    private val questions = Constants.provideQuestions().shuffled()
     var currentQuestionId = -1
     var selectedAnswerId = -1
     var schet = 0
@@ -49,16 +49,19 @@ class GameActivity : AppCompatActivity() {
             }
 
             btnOptionSubmit.setOnClickListener {
-                if(currentQuestionId == 8){
+                when(btnOptionSubmit.text){
+                    getString(R.string.text_finish) -> {
                     intent.putExtra("Data", schet.toString())
                     startActivity(intent)
-
+                        finish()
                 }
-                if(btnOptionSubmit.text == getString(R.string.text_submit)) checkAnswer()
-                else {
-                    currentQuestionId++
-                    lpi.progress = currentQuestionId
-                    setQuestion()
+                    getString(R.string.text_submit) -> checkAnswer()
+
+                    getString(R.string.text_continue) -> {
+                        currentQuestionId++
+                        lpi.progress = currentQuestionId
+                        setQuestion()
+                    }
                 }
             }
         }
@@ -75,6 +78,11 @@ class GameActivity : AppCompatActivity() {
             btnOptionTwo.text = currentQuestion.answers[1]
             btnOptionThree.text = currentQuestion.answers[2]
             btnOptionFour.text = currentQuestion.answers[3]
+
+            btnOptionOne.isEnabled = true
+            btnOptionTwo.isEnabled = true
+            btnOptionThree.isEnabled = true
+            btnOptionFour.isEnabled = true
 
             btnOptionSubmit.text = getString(R.string.text_submit)
 
@@ -170,7 +178,17 @@ class GameActivity : AppCompatActivity() {
             }
 
             selectedAnswerId = 99
+
             btnOptionSubmit.text = getString(R.string.text_continue)
+            if(currentQuestionId == 9){
+                btnOptionSubmit.text = getString(R.string.text_finish)
+                lpi.progress++
+            }
+
+            btnOptionOne.isEnabled = false
+            btnOptionTwo.isEnabled = false
+            btnOptionThree.isEnabled = false
+            btnOptionFour.isEnabled = false
        }
 
     }
